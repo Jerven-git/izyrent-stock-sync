@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 const { SHOPIFY_STORE_DOMAIN, SHOPIFY_ACCESS_TOKEN } = process.env;
 
 // 🔔 Webhook endpoint for new orders
-app.post("/webhook/order-create", async (req, res) => {
+app.post("/webhooks/orders/create", async (req, res) => {
   try {
     const order = req.body;
     console.log(`📦 Order received: ${order.id}`);
